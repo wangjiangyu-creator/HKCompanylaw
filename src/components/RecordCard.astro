@@ -1,0 +1,36 @@
+---
+import { getTopic } from '@/lib/content';
+import type { ContentRecord } from '@/lib/content';
+
+const { record } = Astro.props as { record: ContentRecord };
+const topicLabels = record.topics.map((topicId) => getTopic(topicId)?.shortTitle ?? topicId);
+const searchText = [
+  record.title,
+  record.type,
+  record.citation,
+  record.year,
+  record.summary,
+  record.importance,
+  ...topicLabels,
+].join(' ');
+---
+
+<article
+  class="record-card"
+  data-record-card
+  data-search={searchText}
+  data-topics={record.topics.join(',')}
+  data-importance={record.importance}
+>
+  <div class="record-card__meta">
+    <span>{record.type}</span>
+    <span>{record.importance}</span>
+    {record.year && <span>{record.year}</span>}
+  </div>
+  <h3><a href={record.sourceUrl} target="_blank" rel="noreferrer">{record.title}</a></h3>
+  <p class="citation">{record.citation}</p>
+  <p>{record.summary}</p>
+  <div class="tag-row">
+    {topicLabels.map((label) => <span>{label}</span>)}
+  </div>
+</article>

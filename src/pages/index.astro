@@ -1,0 +1,68 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import RecordCard from '@/components/RecordCard.astro';
+import { catalogs } from '@/lib/catalog';
+import { allRecords, topics } from '@/lib/content';
+
+const foundationalRecords = allRecords.filter((record) => record.importance === 'Foundational').slice(0, 6);
+const stats = [
+  { label: 'Topics', value: topics.length },
+  { label: 'Laws & rules', value: catalogs[0].records.length },
+  { label: 'Cases', value: catalogs[1].records.length },
+  { label: 'Scholarship & notes', value: catalogs[2].records.length + catalogs[3].records.length },
+];
+---
+
+<BaseLayout>
+  <section class="home-hero">
+    <div class="home-hero__image" aria-hidden="true"></div>
+    <div class="home-hero__content content-wrap">
+      <p class="eyebrow">Academic guide</p>
+      <h1>Hong Kong Company Law</h1>
+      <p>
+        A curated research portal for the statutory architecture, cases, scholarship, and practice materials that shape company law in Hong Kong.
+      </p>
+      <div class="hero-actions" aria-label="Primary sections">
+        <a href="/topics/">Topic map</a>
+        <a href="/laws-rules/">Laws and rules</a>
+        <a href="/cases/">Cases</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-wrap dashboard-grid" aria-label="Site dashboard">
+    {stats.map((stat) => (
+      <div class="stat-tile">
+        <strong>{stat.value}</strong>
+        <span>{stat.label}</span>
+      </div>
+    ))}
+  </section>
+
+  <section class="content-wrap section-band">
+    <div class="section-heading">
+      <p class="eyebrow">Main topics</p>
+      <h2>Doctrinal map</h2>
+      <a href="/topics/">View all topics</a>
+    </div>
+    <div class="topic-strip">
+      {topics.slice(0, 8).map((topic) => (
+        <a class="topic-pill" href={`/topics/#${topic.id}`}>
+          <span>{topic.shortTitle}</span>
+          <small>{topic.summary}</small>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="content-wrap section-band">
+    <div class="section-heading">
+      <p class="eyebrow">Starter authorities</p>
+      <h2>Foundational sources</h2>
+      <a href="/laws-rules/">Browse catalogues</a>
+    </div>
+    <div class="record-grid">
+      {foundationalRecords.map((record) => <RecordCard record={record} />)}
+    </div>
+  </section>
+</BaseLayout>

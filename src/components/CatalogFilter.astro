@@ -1,0 +1,69 @@
+---
+import { topics } from '@/lib/content';
+
+const { label = 'Filter records' } = Astro.props;
+---
+
+<section class="filter-panel" aria-label={label}>
+  <label class="search-box">
+    <span>Search</span>
+    <input type="search" data-catalog-search placeholder="Search title, citation, summary, or topic" />
+  </label>
+  <label class="select-box">
+    <span>Topic</span>
+    <select data-topic-filter>
+      <option value="">All topics</option>
+      {topics.map((topic) => <option value={topic.id}>{topic.shortTitle}</option>)}
+    </select>
+  </label>
+  <label class="select-box">
+    <span>Importance</span>
+    <select data-importance-filter>
+      <option value="">All levels</option>
+      <option value="Foundational">Foundational</option>
+      <option value="Core">Core</option>
+      <option value="Specialist">Specialist</option>
+      <option value="Current">Current</option>
+    </select>
+  </label>
+  <p class="filter-count"><span data-result-count></span></p>
+</section>
+
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    const normalize = (value) => (value || '').toLowerCase().trim();
+    const searchInput = document.querySelector('[data-catalog-search]');
+    const topicSelect = document.querySelector('[data-topic-filter]');
+    const importanceSelect = document.querySelector('[data-importance-filter]');
+    const countLabel = document.querySelector('[data-result-count]');
+    const records = Array.from(document.querySelectorAll('[data-record-card]'));
+
+    function applyFilters() {
+      const query = normalize(searchInput?.value);
+      const topic = topicSelect?.value || '';
+      const importance = importanceSelect?.value || '';
+      let visible = 0;
+
+      for (const record of records) {
+        const text = normalize(record.dataset.search);
+        const topics = (record.dataset.topics || '').split(',');
+        const recordImportance = record.dataset.importance || '';
+        const matchesQuery = !query || text.includes(query);
+        const matchesTopic = !topic || topics.includes(topic);
+        const matchesImportance = !importance || recordImportance === importance;
+        const shouldShow = matchesQuery && matchesTopic && matchesImportance;
+        record.hidden = !shouldShow;
+        if (shouldShow) visible += 1;
+      }
+
+      if (countLabel) {
+        countLabel.textContent = `${visible} ${visible === 1 ? 'record' : 'records'}`;
+      }
+    }
+
+    searchInput?.addEventListener('input', applyFilters);
+    topicSelect?.addEventListener('change', applyFilters);
+    importanceSelect?.addEventListener('change', applyFilters);
+    applyFilters();
+  });
+</script>

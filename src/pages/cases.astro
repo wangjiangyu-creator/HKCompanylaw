@@ -1,0 +1,9 @@
+---
+import CatalogPage from '@/components/CatalogPage.astro';
+import { getCatalog } from '@/lib/catalog';
+
+const catalog = getCatalog('cases');
+if (!catalog) throw new Error('Missing cases catalogue');
+---
+
+<CatalogPage catalog={catalog} />

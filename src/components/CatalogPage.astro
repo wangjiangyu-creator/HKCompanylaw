@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CatalogFilter from './CatalogFilter.astro';
+import RecordCard from './RecordCard.astro';
+import type { Catalog } from '@/lib/catalog';
+
+const { catalog } = Astro.props as { catalog: Catalog };
+---
+
+<BaseLayout title={`${catalog.title} | Hong Kong Company Law`} description={catalog.description}>
+  <section class="page-hero compact-hero">
+    <div class="content-wrap">
+      <p class="eyebrow">{catalog.kicker}</p>
+      <h1>{catalog.title}</h1>
+      <p>{catalog.description}</p>
+    </div>
+  </section>
+  <section class="content-wrap catalogue-section">
+    <CatalogFilter label={`Filter ${catalog.title}`} />
+    <div class="record-grid">
+      {catalog.records.map((record) => <RecordCard record={record} />)}
+    </div>
+  </section>
+</BaseLayout>

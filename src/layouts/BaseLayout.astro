@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+
+const {
+  title = 'Hong Kong Company Law',
+  description = 'A curated academic guide to Hong Kong company law.',
+} = Astro.props;
+
+const navItems = [
+  { href: '/', label: 'Overview' },
+  { href: '/topics/', label: 'Topics' },
+  { href: '/laws-rules/', label: 'Laws & Rules' },
+  { href: '/cases/', label: 'Cases' },
+  { href: '/academic-works/', label: 'Academic Works' },
+  { href: '/practice-notes/', label: 'Practice Notes' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="site-mark" href="/" aria-label="Hong Kong Company Law home">
+          <span class="site-mark__seal">HK</span>
+          <span>
+            <strong>Hong Kong Company Law</strong>
+            <small>Research portal</small>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          {
+            navItems.map((item) => (
+              <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+    </header>
+    <main id="content">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div>
+        <strong>Hong Kong Company Law</strong>
+        <p>Academic research resource. Source summaries are informational only and not legal advice.</p>
+      </div>
+      <p class="image-credit">
+        Banner image: Court of Final Appeal Building, Wikimedia Commons.
+      </p>
+    </footer>
+  </body>
+</html>
