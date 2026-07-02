@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://wangjiangyu-creator.github.io/HKCompanylaw/',
+  site: 'https://hkcompanylaw.eastlaw.wang/',
 });
