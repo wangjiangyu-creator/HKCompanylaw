@@ -5,6 +5,12 @@ import RecordCard from './RecordCard.astro';
 import type { Catalog } from '@/lib/catalog';
 
 const { catalog } = Astro.props as { catalog: Catalog };
+const catalogueMetrics = [
+  { label: 'Total records', value: catalog.records.length },
+  { label: 'Foundational', value: catalog.records.filter((record) => record.importance === 'Foundational').length },
+  { label: 'Core', value: catalog.records.filter((record) => record.importance === 'Core').length },
+  { label: 'Current', value: catalog.records.filter((record) => record.importance === 'Current').length },
+];
 ---
 
 <BaseLayout title={`${catalog.title} | Hong Kong Company Law`} description={catalog.description}>
@@ -16,7 +22,15 @@ const { catalog } = Astro.props as { catalog: Catalog };
     </div>
   </section>
   <section class="content-wrap catalogue-section">
-    <CatalogFilter label={`Filter ${catalog.title}`} />
+    <div class="catalogue-metrics" aria-label={`${catalog.title} summary`}>
+      {catalogueMetrics.map((metric) => (
+        <div>
+          <strong>{metric.value}</strong>
+          <span>{metric.label}</span>
+        </div>
+      ))}
+    </div>
+    <CatalogFilter label={`Filter ${catalog.title}`} records={catalog.records} />
     <div class="record-grid">
       {catalog.records.map((record) => <RecordCard record={record} />)}
     </div>

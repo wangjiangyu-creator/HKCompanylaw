@@ -5,11 +5,39 @@ import { catalogs } from '@/lib/catalog';
 import { allRecords, topics } from '@/lib/content';
 
 const foundationalRecords = allRecords.filter((record) => record.importance === 'Foundational').slice(0, 6);
+const currentRecords = allRecords.filter((record) => record.importance === 'Current').length;
 const stats = [
   { label: 'Topics', value: topics.length },
   { label: 'Laws & rules', value: catalogs[0].records.length },
   { label: 'Cases', value: catalogs[1].records.length },
-  { label: 'Scholarship & notes', value: catalogs[2].records.length + catalogs[3].records.length },
+  { label: 'Total records', value: allRecords.length },
+];
+const workflow = [
+  {
+    title: 'Start with a doctrine',
+    text: 'Use the topic map to identify the statutory anchors, litigation questions, and adjacent doctrines before moving to individual authorities.',
+  },
+  {
+    title: 'Compare source layers',
+    text: 'Read statutes and rules alongside cases, academic commentary, and practice notes so that black-letter law and market practice remain connected.',
+  },
+  {
+    title: 'Check current materials',
+    text: 'Filter for current records when working on listed-company governance, schemes, restructuring, and shareholder-remedy developments.',
+  },
+];
+const coverage = catalogs.map((catalog) => ({
+  ...catalog,
+  current: catalog.records.filter((record) => record.importance === 'Current').length,
+  foundational: catalog.records.filter((record) => record.importance === 'Foundational').length,
+}));
+const catalogueHref = (slug: string) => `/${slug}/`;
+const latestNote = `${currentRecords} current records are included across the catalogues.`;
+const sourceMix = [
+  'Official legislation and regulatory materials',
+  'Judicial and case-note materials',
+  'Books, chapters, and journal scholarship',
+  'Law-firm, professional, and public guidance',
 ];
 ---
 
@@ -39,6 +67,23 @@ const stats = [
     ))}
   </section>
 
+  <section class="content-wrap research-workflow" aria-label="Research workflow">
+    <div class="workflow-intro">
+      <p class="eyebrow">Research workflow</p>
+      <h2>Move from doctrine to authority</h2>
+      <p>{latestNote}</p>
+    </div>
+    <div class="workflow-steps">
+      {workflow.map((step, index) => (
+        <article>
+          <span>{String(index + 1).padStart(2, '0')}</span>
+          <h3>{step.title}</h3>
+          <p>{step.text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
   <section class="content-wrap section-band">
     <div class="section-heading">
       <p class="eyebrow">Main topics</p>
@@ -52,6 +97,31 @@ const stats = [
           <small>{topic.summary}</small>
         </a>
       ))}
+    </div>
+  </section>
+
+  <section class="content-wrap section-band coverage-band">
+    <div class="section-heading">
+      <p class="eyebrow">Coverage</p>
+      <h2>Source collections</h2>
+      <a href="/academic-works/">Browse scholarship</a>
+    </div>
+    <div class="coverage-layout">
+      <div class="coverage-table" role="table" aria-label="Coverage by collection">
+        {coverage.map((catalog) => (
+          <a class="coverage-row" href={catalogueHref(catalog.slug)} role="row">
+            <span role="cell">{catalog.title}</span>
+            <strong role="cell">{catalog.records.length} records</strong>
+            <small role="cell">{catalog.foundational} foundational / {catalog.current} current</small>
+          </a>
+        ))}
+      </div>
+      <div class="source-mix">
+        <h3>Source mix</h3>
+        <ul>
+          {sourceMix.map((source) => <li>{source}</li>)}
+        </ul>
+      </div>
     </div>
   </section>
 

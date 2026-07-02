@@ -1,7 +1,12 @@
 ---
 import { topics } from '@/lib/content';
+import type { ContentRecord } from '@/lib/content';
 
-const { label = 'Filter records' } = Astro.props;
+const { label = 'Filter records', records = [] } = Astro.props as {
+  label?: string;
+  records?: ContentRecord[];
+};
+const recordTypes = Array.from(new Set(records.map((record) => record.type))).sort((a, b) => a.localeCompare(b));
 ---
 
 <section class="filter-panel" aria-label={label}>
@@ -26,8 +31,17 @@ const { label = 'Filter records' } = Astro.props;
       <option value="Current">Current</option>
     </select>
   </label>
+  <label class="select-box">
+    <span>Source type</span>
+    <select data-type-filter>
+      <option value="">All types</option>
+      {recordTypes.map((type) => <option value={type}>{type}</option>)}
+    </select>
+  </label>
+  <button class="filter-reset" type="button" data-filter-reset>Reset</button>
   <p class="filter-count"><span data-result-count></span></p>
 </section>
+<p class="empty-state" data-no-results hidden>No records match the selected filters.</p>
 
 <script is:inline>
   window.addEventListener('DOMContentLoaded', () => {
@@ -35,23 +49,29 @@ const { label = 'Filter records' } = Astro.props;
     const searchInput = document.querySelector('[data-catalog-search]');
     const topicSelect = document.querySelector('[data-topic-filter]');
     const importanceSelect = document.querySelector('[data-importance-filter]');
+    const typeSelect = document.querySelector('[data-type-filter]');
+    const resetButton = document.querySelector('[data-filter-reset]');
     const countLabel = document.querySelector('[data-result-count]');
+    const noResults = document.querySelector('[data-no-results]');
     const records = Array.from(document.querySelectorAll('[data-record-card]'));
 
     function applyFilters() {
       const query = normalize(searchInput?.value);
       const topic = topicSelect?.value || '';
       const importance = importanceSelect?.value || '';
+      const type = typeSelect?.value || '';
       let visible = 0;
 
       for (const record of records) {
         const text = normalize(record.dataset.search);
         const topics = (record.dataset.topics || '').split(',');
         const recordImportance = record.dataset.importance || '';
+        const recordType = record.dataset.type || '';
         const matchesQuery = !query || text.includes(query);
         const matchesTopic = !topic || topics.includes(topic);
         const matchesImportance = !importance || recordImportance === importance;
-        const shouldShow = matchesQuery && matchesTopic && matchesImportance;
+        const matchesType = !type || recordType === type;
+        const shouldShow = matchesQuery && matchesTopic && matchesImportance && matchesType;
         record.hidden = !shouldShow;
         if (shouldShow) visible += 1;
       }
@@ -59,11 +79,24 @@ const { label = 'Filter records' } = Astro.props;
       if (countLabel) {
         countLabel.textContent = `${visible} ${visible === 1 ? 'record' : 'records'}`;
       }
+      if (noResults) {
+        noResults.hidden = visible !== 0;
+      }
+    }
+
+    function resetFilters() {
+      if (searchInput) searchInput.value = '';
+      if (topicSelect) topicSelect.value = '';
+      if (importanceSelect) importanceSelect.value = '';
+      if (typeSelect) typeSelect.value = '';
+      applyFilters();
     }
 
     searchInput?.addEventListener('input', applyFilters);
     topicSelect?.addEventListener('change', applyFilters);
     importanceSelect?.addEventListener('change', applyFilters);
+    typeSelect?.addEventListener('change', applyFilters);
+    resetButton?.addEventListener('click', resetFilters);
     applyFilters();
   });
 </script>

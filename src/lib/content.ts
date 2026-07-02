@@ -276,6 +276,110 @@ export const lawsRules: ContentRecord[] = [
     sourceUrl: 'https://www.elegislation.gov.hk/hk/cap310',
     importance: 'Core',
   },
+  {
+    id: 'companies-registry-annual-return-faq',
+    title: 'Annual Return Filing Guidance for Local Companies',
+    type: 'Official guidance',
+    citation: 'Companies Registry FAQ',
+    summary:
+      'Official guidance on annual return filing, delivery windows, late delivery fees, and continuing disclosure obligations for Hong Kong incorporated companies.',
+    topics: ['incorporation', 'shareholder-governance'],
+    sourceUrl: 'https://www.cr.gov.hk/en/faq/local-company/annual-return.htm',
+    importance: 'Core',
+  },
+  {
+    id: 'companies-registry-significant-controllers-register',
+    title: 'Significant Controllers Register Guidance',
+    type: 'Official guidance',
+    citation: 'Companies Registry FAQ',
+    year: '2018',
+    summary:
+      'Companies Registry guidance on the statutory significant controllers register regime, including registrable persons, reasonable steps, notices, and inspection.',
+    topics: ['incorporation', 'shareholder-governance', 'corporate-personality'],
+    sourceUrl: 'https://www.cr.gov.hk/en/legislation/scr/faq.htm',
+    importance: 'Core',
+  },
+  {
+    id: 'companies-registry-deregistration-striking-off-winding-up-faq',
+    title: 'Deregistration, Striking Off, and Winding Up Guidance',
+    type: 'Official guidance',
+    citation: 'Companies Registry FAQ',
+    summary:
+      'Official procedural guidance distinguishing deregistration, striking off, restoration, and winding up in company lifecycle analysis.',
+    topics: ['incorporation', 'winding-up-restructuring'],
+    sourceUrl: 'https://www.cr.gov.hk/en/faq/local-company/dereg-striking-off-winding-up.htm',
+    importance: 'Core',
+  },
+  {
+    id: 'companies-registry-part-13-arrangements-amalgamation',
+    title: 'Arrangements, Amalgamation, and Compulsory Share Acquisition',
+    type: 'Official briefing note',
+    citation: 'Companies Registry, Cap. 622 Part 13',
+    summary:
+      'Companies Registry briefing on Part 13, including schemes of arrangement, court approval, amalgamation, and compulsory acquisition mechanics.',
+    topics: ['takeovers-schemes', 'minority-remedies', 'capital-shares'],
+    sourceUrl: 'https://www.cr.gov.hk/en/companies_ordinance/docs/briefingnotes_part13-e.pdf',
+    importance: 'Core',
+  },
+  {
+    id: 'hkex-esg-reporting-code',
+    title: 'Environmental, Social and Governance Reporting Code',
+    type: 'Listing rule appendix',
+    citation: 'HKEX Listing Rules, Appendix C2',
+    summary:
+      'Issuer ESG reporting requirements and principles, relevant to listed-company governance, board oversight, and disclosure architecture.',
+    topics: ['listed-companies', 'directors-duties'],
+    sourceUrl:
+      'https://en-rules.hkex.com.hk/rulebook/appendix-c2-environmental-social-and-governance-reporting-code-0',
+    importance: 'Core',
+  },
+  {
+    id: 'hkex-climate-disclosure-conclusions-2024',
+    title: 'Climate Disclosure Requirements: Consultation Conclusions',
+    type: 'Regulatory announcement',
+    citation: 'HKEX, 19 April 2024',
+    year: '2024',
+    summary:
+      'HKEX conclusions on enhanced climate-related disclosure requirements, important for current listed-company governance and reporting practice.',
+    topics: ['listed-companies', 'directors-duties'],
+    sourceUrl: 'https://www.hkex.com.hk/News/Regulatory-Announcements/2024/240419news?sc_lang=en',
+    importance: 'Current',
+  },
+  {
+    id: 'sfc-current-takeovers-code-pdf',
+    title: 'Current Codes on Takeovers and Mergers and Share Buy-backs',
+    type: 'Regulatory code',
+    citation: 'Securities and Futures Commission, current PDF',
+    summary:
+      'The current consolidated text of the SFC takeovers and share buy-backs codes for mandatory offers, privatizations, waivers, and regulated control transactions.',
+    topics: ['takeovers-schemes', 'listed-companies', 'capital-shares'],
+    sourceUrl:
+      'https://www.sfc.hk/-/media/EN/assets/components/codes/files-current/web/codes/the-codes-on-takeovers-and-mergers-and-share-buy-backs/the-codes-on-takeovers-and-mergers-and-share-buy-backs.pdf',
+    importance: 'Foundational',
+  },
+  {
+    id: 'sfc-takeovers-practice-notes-page',
+    title: 'Takeovers and Mergers Practice Notes',
+    type: 'Regulatory practice notes',
+    citation: 'Securities and Futures Commission',
+    summary:
+      'SFC practice notes that explain the Executive’s approach to recurring issues under the Takeovers Code and Share Buy-backs Code.',
+    topics: ['takeovers-schemes', 'listed-companies'],
+    sourceUrl: 'https://www.sfc.hk/en/Regulatory-functions/Corporates/Takeovers-and-mergers/Practice-notes',
+    importance: 'Core',
+  },
+  {
+    id: 'clic-company-formation-cap-622',
+    title: 'Company Formation and Re-registration under the New Companies Ordinance',
+    type: 'Public legal information',
+    citation: 'Community Legal Information Centre',
+    summary:
+      'Accessible public-law explanation of company formation, re-registration, constitutional documents, and private-company administration under Cap. 622.',
+    topics: ['incorporation', 'constitutional-documents'],
+    sourceUrl:
+      'https://clic.org.hk/en/topics/businessAndCommerce/setting_up_business_in_Hong_Kong/the_new_company_ordinance/company_formation_and_related_matters_and_re_registration_of_companies',
+    importance: 'Core',
+  },
 ];
 
 export const cases: ContentRecord[] = [
@@ -376,6 +480,71 @@ export const cases: ContentRecord[] = [
       'https://bernacchichambers.com/lui-yau-tak-%E9%9B%B7%E6%9C%89%E5%BE%97-anor-v-melofield-nursery-and-landscape-contractor-ltd-%E7%B6%93%E7%B7%AF%E5%9C%92%E8%97%9D%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-2025-3-hkc-721/',
     importance: 'Current',
   },
+  {
+    id: 'chen-pei-xiong-v-convoy',
+    title: 'Chen Pei Xiong v Convoy Global Holdings Ltd and Another',
+    type: 'Statutory derivative action',
+    citation: '[2024] HKCFI 1568',
+    year: '2024',
+    summary:
+      'Recent authority on statutory derivative actions, standing, and the procedural difficulty of multiple derivative litigation involving overseas group companies.',
+    topics: ['derivative-actions', 'minority-remedies', 'corporate-personality'],
+    sourceUrl:
+      'https://www.hsfkramer.com/notes/asiadisputes/2024-posts/Hong-Kong-Court-considers-requirements-for-shareholders-commencing-statutory-derivative-actions-against-companies',
+    importance: 'Current',
+  },
+  {
+    id: 're-sino-ocean-land-hk',
+    title: 'Re Sino-Ocean Land (Hong Kong) Ltd',
+    type: 'Scheme of arrangement',
+    citation: '[2025] HKCFI 1270',
+    year: '2025',
+    summary:
+      'Companies Court decision sanctioning a Hong Kong scheme as part of a cross-border restructuring, important for debt schemes and the Rule in Gibbs problem.',
+    topics: ['takeovers-schemes', 'winding-up-restructuring', 'listed-companies'],
+    sourceUrl:
+      'https://www.hk-lawyer.org/content/re-sino-ocean-land-hong-kong-ltd-%E9%81%A0%E6%B4%8B%E5%9C%B0%E7%94%A2%E9%A6%99%E6%B8%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8',
+    importance: 'Current',
+  },
+  {
+    id: 'liu-qiuhua-v-xiang-xin',
+    title: 'Liu Qiuhua v Xiang Xin and Others',
+    type: 'Shareholder requisition and fiduciary duties',
+    citation: '[2025] HKCFI 1048',
+    year: '2025',
+    summary:
+      'Recent listed-company governance decision on directors’ attempts to postpone requisitioned meetings and the proper-purpose limits on board power.',
+    topics: ['shareholder-governance', 'directors-duties', 'listed-companies'],
+    sourceUrl:
+      'https://hkytl.com/2025/03/31/alert-directors-how-directors-mis-steps-in-blocking-shareholders-led-to-personal-liability/',
+    importance: 'Current',
+  },
+  {
+    id: 'pi-1-pi-2-v-mr',
+    title: 'PI 1 and PI 2 v MR',
+    type: 'Oppression, arbitration, and winding up',
+    citation: '[2025] HKCFI 1110',
+    year: '2025',
+    summary:
+      'Decision on the arbitrability of shareholder oppression and loss-of-confidence disputes where the requested relief is connected to winding-up proceedings.',
+    topics: ['minority-remedies', 'shareholder-governance', 'winding-up-restructuring'],
+    sourceUrl:
+      'https://www.applebyglobal.com/publications/high-court-of-hong-kong-confirms-arbitrability-of-shareholder-claims-for-oppression-and-loss-of-confidence/',
+    importance: 'Current',
+  },
+  {
+    id: 'target-insurance-v-nerico-brothers',
+    title: 'Target Insurance Company Ltd v Nerico Brothers Ltd',
+    type: 'Insolvency and directors’ liability',
+    citation: '[2025] HKCA 1024',
+    year: '2025',
+    summary:
+      'Court of Appeal decision imposing personal costs liability on a director who caused an insolvent company to pursue an unarguable winding-up appeal.',
+    topics: ['directors-duties', 'winding-up-restructuring'],
+    sourceUrl:
+      'https://www.hoganlovells.com/en/publications/directors-duties-in-insolvency-hong-kong-court-warns-of-personal-liability-for-frivolous-challenges',
+    importance: 'Current',
+  },
 ];
 
 export const academicWorks: ContentRecord[] = [
@@ -466,6 +635,101 @@ export const academicWorks: ContentRecord[] = [
     topics: ['takeovers-schemes', 'listed-companies'],
     sourceUrl:
       'https://www.cambridge.org/core/books/comparative-takeover-regulation/evolutionary-development-in-hong-kong-of-transplanted-ukorigin-takeover-rules/4A09595A6B54DB2B261408EEE2860EED',
+    importance: 'Specialist',
+  },
+  {
+    id: 'corporate-governance-key-problems-prospects',
+    title: 'Corporate Governance in Hong Kong: Key Problems and Prospects',
+    type: 'Journal article',
+    citation: 'Stott, Wong and Ho, SSRN working paper',
+    summary:
+      'Early but still useful analysis of Hong Kong corporate governance problems, including controlling-shareholder structures, enforcement, and institutional reform.',
+    topics: ['listed-companies', 'shareholder-governance', 'directors-duties'],
+    sourceUrl: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=440924',
+    importance: 'Specialist',
+  },
+  {
+    id: 'yap-reforming-ratification',
+    title: 'Reforming Ratification',
+    type: 'Journal article',
+    citation: 'Ji Lian Yap, Common Law World Review 40(1)',
+    year: '2011',
+    summary:
+      'Examines shareholder ratification of directors’ breaches and the policy tension between majority control, minority protection, and corporate accountability.',
+    topics: ['directors-duties', 'shareholder-governance', 'derivative-actions'],
+    sourceUrl: 'https://journals.sagepub.com/doi/10.1350/clwr.2011.40.1.0214',
+    importance: 'Specialist',
+  },
+  {
+    id: 'directors-duty-promote-success-hk',
+    title: 'A Director’s Duty to Promote the Success of the Company',
+    type: 'Journal article',
+    citation: 'Journal of Corporate Law Studies 10(1)',
+    year: '2010',
+    summary:
+      'Comparative analysis relevant to Hong Kong debates on codifying directors’ duties and the relationship between shareholder value and broader interests.',
+    topics: ['directors-duties', 'listed-companies'],
+    sourceUrl: 'https://doi.org/10.1080/14735970.2010.11419819',
+    importance: 'Specialist',
+  },
+  {
+    id: 'derivative-action-asia-hong-kong',
+    title: 'A Parallel Path to Shareholder Remedies',
+    type: 'Book chapter',
+    citation: 'Derivative Action in Asia, Cambridge University Press',
+    summary:
+      'Hong Kong chapter situating statutory and common law derivative actions within regional reform patterns and shareholder-remedy policy.',
+    topics: ['derivative-actions', 'minority-remedies'],
+    sourceUrl:
+      'https://www.cambridge.org/core/books/derivative-action-in-asia/parallel-path-to-shareholder-remedies/F4C80D76BCE50C6A73822E4D74CB2A5E',
+    importance: 'Specialist',
+  },
+  {
+    id: 'company-law-hk-practice-procedure-2023',
+    title: 'Company Law in Hong Kong: Practice and Procedure',
+    type: 'Book',
+    citation: 'Hong Kong practitioner text, 2023',
+    year: '2023',
+    summary:
+      'Practice-oriented company-law text covering procedural and transactional aspects of Hong Kong corporate administration and disputes.',
+    topics: ['incorporation', 'shareholder-governance', 'minority-remedies', 'winding-up-restructuring'],
+    sourceUrl: 'https://www.pbookshop.com/company-law-in-hong-kong-practice-and-procedure-2023-e-book-only-9789888590193.html',
+    importance: 'Core',
+  },
+  {
+    id: 'independent-directors-related-party-transactions-hk',
+    title: 'Can Independent Directors Effectively Monitor Related Party Transactions?',
+    type: 'Journal article',
+    citation: 'International Review of Law and Economics, Vol. 82',
+    year: '2025',
+    summary:
+      'Empirical study using Hong Kong evidence to assess independent-director monitoring of related-party transactions and listed-company governance quality.',
+    topics: ['listed-companies', 'directors-duties', 'shareholder-governance'],
+    sourceUrl: 'https://ideas.repec.org/a/eee/irlaec/v82y2025ics0144818825000171.html',
+    importance: 'Current',
+  },
+  {
+    id: 'effective-scheme-based-corporate-rescue-hk',
+    title: 'Towards an Effective Scheme-Based Corporate Rescue System for Hong Kong',
+    type: 'Journal article',
+    citation: 'Journal of Corporate Law Studies 12(1)',
+    year: '2012',
+    summary:
+      'Evaluates Hong Kong’s scheme-based restructuring toolkit and the limits of relying on schemes in the absence of a dedicated rescue procedure.',
+    topics: ['takeovers-schemes', 'winding-up-restructuring'],
+    sourceUrl: 'https://doi.org/10.5235/147359712800129885',
+    importance: 'Specialist',
+  },
+  {
+    id: 'cross-border-insolvency-foreign-schemes-hk',
+    title: 'Cross-Border Insolvency Law in Hong Kong: Recognition of Foreign Schemes',
+    type: 'Journal article',
+    citation: 'International Insolvency Review 30(3)',
+    year: '2021',
+    summary:
+      'Analyses recognition of foreign restructuring schemes in Hong Kong and the doctrinal pressures created by cross-border corporate debt structures.',
+    topics: ['winding-up-restructuring', 'takeovers-schemes'],
+    sourceUrl: 'https://onlinelibrary.wiley.com/doi/10.1002/iir.1421',
     importance: 'Specialist',
   },
 ];
@@ -572,6 +836,105 @@ export const practiceNotes: ContentRecord[] = [
     topics: ['directors-duties', 'winding-up-restructuring'],
     sourceUrl:
       'https://www.hoganlovells.com/en/publications/directors-duties-in-insolvency-hong-kong-court-warns-of-personal-liability-for-frivolous-challenges',
+    importance: 'Current',
+  },
+  {
+    id: 'oro-compulsory-winding-up-simple-guide',
+    title: 'Simple Guide on Compulsory Winding-up of Companies',
+    type: 'Official guidance',
+    citation: 'Official Receiver’s Office',
+    summary:
+      'Official public guide to compulsory winding-up procedure, petitions, orders, liquidators, creditor participation, and practical effects of liquidation.',
+    topics: ['winding-up-restructuring', 'minority-remedies'],
+    sourceUrl:
+      'https://www.oro.gov.hk/eng/our_services/publications/compulsory_winding_up_of_companies/simple_guide_on_compulsory_winding_up_of_companies.html',
+    importance: 'Foundational',
+  },
+  {
+    id: 'hkex-corporate-governance-guide-2026',
+    title: 'Corporate Governance Guide for Boards and Directors',
+    type: 'Exchange guidance',
+    citation: 'HKEX, April 2026',
+    year: '2026',
+    summary:
+      'Current HKEX guide for listed-company boards on governance structure, board effectiveness, risk oversight, controls, and corporate governance reporting.',
+    topics: ['listed-companies', 'directors-duties'],
+    sourceUrl:
+      'https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Corporate-Governance-Practices/CG_Guide.pdf',
+    importance: 'Current',
+  },
+  {
+    id: 'clic-companies-ordinance-overview',
+    title: 'The New Companies Ordinance',
+    type: 'Public legal information',
+    citation: 'Community Legal Information Centre',
+    summary:
+      'Plain-language overview of Cap. 622 for non-specialist readers, useful as a public-facing bridge into incorporation and company administration topics.',
+    topics: ['incorporation', 'constitutional-documents', 'shareholder-governance'],
+    sourceUrl: 'https://www.clic.org.hk/en/topics/businessAndCommerce/setting_up_business_in_Hong_Kong/the_new_company_ordinance',
+    importance: 'Core',
+  },
+  {
+    id: 'deacons-oppression-arbitrability',
+    title: 'Court Holds Oppression and Loss-of-Confidence Claims to Be Arbitrable',
+    type: 'Law firm case note',
+    citation: 'Deacons',
+    year: '2025',
+    summary:
+      'Practitioner note on PI 1 and PI 2 v MR and the interaction between arbitration clauses, shareholder oppression disputes, and winding-up relief.',
+    topics: ['minority-remedies', 'shareholder-governance', 'winding-up-restructuring'],
+    sourceUrl: 'https://www.deacons.com/2025/08/19/court-holds-oppression-and-loss-of-confidence-claims-to-be-arbitrable/',
+    importance: 'Current',
+  },
+  {
+    id: 'baker-mckenzie-board-fight-shareholder-rights',
+    title: 'Board Fight: Court Intervened to Protect Shareholders’ Rights',
+    type: 'Law firm case note',
+    citation: 'Baker McKenzie',
+    year: '2025',
+    summary:
+      'Practice note on listed-company board disputes, requisitioned meetings, shareholder voting rights, and judicial control of directors’ defensive tactics.',
+    topics: ['shareholder-governance', 'directors-duties', 'listed-companies'],
+    sourceUrl:
+      'https://globallitigationnews.bakermckenzie.com/2025/04/03/hong-kong-board-fight-court-intervened-to-protect-shareholders-rights-in-board-disputes/',
+    importance: 'Current',
+  },
+  {
+    id: 'dentons-derivative-action-insolvency-context',
+    title: 'Court of Appeal Shuts Down Derivative Action in Insolvency Context',
+    type: 'Law firm case note',
+    citation: 'Dentons',
+    year: '2026',
+    summary:
+      'Current note on derivative action strategy where the company is in insolvency-related proceedings and control over corporate claims is contested.',
+    topics: ['derivative-actions', 'winding-up-restructuring', 'minority-remedies'],
+    sourceUrl:
+      'https://hongkong.dentons.com/en/insights/articles/2026/june/2/court-of-appeal-upholds-decision-to-shut-down-derivative-action-in-insolvency-context',
+    importance: 'Current',
+  },
+  {
+    id: 'hsf-unfair-prejudice-buyout-2025',
+    title: 'Hong Kong Court Resists Strike-out of Buy-out Order in Unfair Prejudice Petition',
+    type: 'Law firm case note',
+    citation: 'Herbert Smith Freehills Kramer',
+    year: '2025',
+    summary:
+      'Current practitioner analysis of unfair prejudice pleadings, buy-out relief, and the threshold for striking out shareholder-remedy claims.',
+    topics: ['minority-remedies', 'shareholder-governance'],
+    sourceUrl:
+      'https://www.hsfkramer.com/notes/asiadisputes/2025-posts/hong-kong-court-resists-strike-out-of-buy-out-order-in-unfair-prejudice-petition',
+    importance: 'Current',
+  },
+  {
+    id: 'freshfields-sino-ocean-restructuring',
+    title: 'Sino-Ocean’s Contentious Rescue Plan: Court Sides with Survival',
+    type: 'Law firm case note',
+    citation: 'Freshfields',
+    year: '2025',
+    summary:
+      'Practitioner update on the Hong Kong sanction of Sino-Ocean’s scheme and the cross-border coordination of a Hong Kong scheme with an English restructuring plan.',
+    topics: ['winding-up-restructuring', 'takeovers-schemes', 'listed-companies'],
+    sourceUrl: 'https://www.freshfields.com/en/our-thinking/blogs/transactions/sino-oceans-contentious-rescue-plan-102jyz0',
     importance: 'Current',
   },
 ];

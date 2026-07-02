@@ -4,6 +4,7 @@ import type { ContentRecord } from '@/lib/content';
 
 const { record } = Astro.props as { record: ContentRecord };
 const topicLabels = record.topics.map((topicId) => getTopic(topicId)?.shortTitle ?? topicId);
+const sourceHost = new URL(record.sourceUrl).hostname.replace(/^www\./, '');
 const searchText = [
   record.title,
   record.type,
@@ -11,6 +12,7 @@ const searchText = [
   record.year,
   record.summary,
   record.importance,
+  sourceHost,
   ...topicLabels,
 ].join(' ');
 ---
@@ -21,6 +23,7 @@ const searchText = [
   data-search={searchText}
   data-topics={record.topics.join(',')}
   data-importance={record.importance}
+  data-type={record.type}
 >
   <div class="record-card__meta">
     <span>{record.type}</span>
@@ -33,4 +36,8 @@ const searchText = [
   <div class="tag-row">
     {topicLabels.map((label) => <span>{label}</span>)}
   </div>
+  <footer class="record-card__footer">
+    <span>{sourceHost}</span>
+    <a href={record.sourceUrl} target="_blank" rel="noreferrer">Open source</a>
+  </footer>
 </article>
