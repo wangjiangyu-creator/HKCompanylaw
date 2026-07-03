@@ -38,13 +38,18 @@ export const topics: Topic[] = [
     title: 'Corporate Personality, Capacity, and Attribution',
     shortTitle: 'Personality',
     summary:
-      'Separate legal personality, corporate capacity, agency, attribution of knowledge, and the limits of treating the company as distinct from its controllers.',
+      'Separate legal personality, corporate capacity, agency, attribution of knowledge, and exceptional disregard of corporate personality through veil-piercing, facade, evasion, concealment, or ordinary private-law analysis.',
     questions: [
       'When does the company bear responsibility for the knowledge or misconduct of its officers?',
       'How do attribution rules interact with fraud, insolvency, and shareholder remedies?',
-      'What work is done by corporate personality in litigation and tax disputes?',
+      'When is interposition of a company an evasion of an existing legal obligation rather than permissible liability planning?',
+      'Can agency, trust, transfer-of-business, or attribution principles solve the problem without piercing the veil?',
     ],
-    statutoryAnchors: ['Companies Ordinance Cap. 622', 'Common law attribution principles'],
+    statutoryAnchors: [
+      'Companies Ordinance Cap. 622',
+      'Transfer of Business (Protection of Creditors) Ordinance Cap. 49',
+      'Common law attribution and veil-piercing principles',
+    ],
   },
   {
     id: 'constitutional-documents',
@@ -176,6 +181,7 @@ export const lawsRules: ContentRecord[] = [
       'The central statute for Hong Kong incorporated companies, covering incorporation, administration, share capital, directors, members, remedies, schemes, and registered non-Hong Kong companies.',
     topics: [
       'incorporation',
+      'corporate-personality',
       'constitutional-documents',
       'capital-shares',
       'directors-duties',
@@ -220,6 +226,17 @@ export const lawsRules: ContentRecord[] = [
     topics: ['minority-remedies', 'winding-up-restructuring', 'capital-shares'],
     sourceUrl: 'https://www.elegislation.gov.hk/hk/cap32',
     importance: 'Foundational',
+  },
+  {
+    id: 'transfer-business-protection-creditors-cap-49',
+    title: 'Transfer of Business (Protection of Creditors) Ordinance',
+    type: 'Ordinance',
+    citation: 'Cap. 49',
+    summary:
+      'Creditor-protection legislation relevant when a business is shifted from one company to another, often operating alongside or instead of veil-piercing arguments.',
+    topics: ['corporate-personality', 'winding-up-restructuring', 'minority-remedies'],
+    sourceUrl: 'https://www.elegislation.gov.hk/hk/cap49',
+    importance: 'Core',
   },
   {
     id: 'sfo-cap-571',
@@ -383,6 +400,66 @@ export const lawsRules: ContentRecord[] = [
 ];
 
 export const cases: ContentRecord[] = [
+  {
+    id: 'china-ocean-shipping-v-mitrans',
+    title: 'China Ocean Shipping Co v Mitrans Shipping Co Ltd',
+    type: 'Corporate veil',
+    citation: 'Court of Appeal, 11 July 1995',
+    year: '1995',
+    summary:
+      'A foundational Hong Kong veil-piercing authority distinguishing objectionable evasion of existing legal obligations from lawful structuring that avoids obligations arising in the first place.',
+    topics: ['corporate-personality', 'winding-up-restructuring'],
+    sourceUrl: 'https://vlex.hk/vid/china-ocean-shipping-co-862557262',
+    importance: 'Foundational',
+  },
+  {
+    id: 'liu-hon-ying-v-hua-xin',
+    title: 'Liu Hon Ying t/a United Speedoc Co v Hua Xin State Enterprise (Hong Kong) Ltd',
+    type: 'Corporate veil and transfer of business',
+    citation: '[2003] 3 HKLRD 347',
+    year: '2003',
+    summary:
+      'High Court decision on a transfer-of-business dispute where the plaintiff argued that successor companies were controlled by the same interests and used to evade liabilities.',
+    topics: ['corporate-personality', 'winding-up-restructuring', 'minority-remedies'],
+    sourceUrl: 'https://vlex.hk/vid/liu-hon-ying-t-862785648',
+    importance: 'Core',
+  },
+  {
+    id: 'lee-sow-keng-v-kelly-mckenzie',
+    title: 'Lee Sow Keng Janet v Kelly McKenzie Ltd and Others',
+    type: 'Corporate veil',
+    citation: '[2004] 3 HKLRD 517',
+    year: '2004',
+    summary:
+      'Court of Appeal case concerning personal liability after the business and goodwill of a judgment debtor were moved into a new company, leaving the original company unable to pay.',
+    topics: ['corporate-personality', 'directors-duties', 'winding-up-restructuring'],
+    sourceUrl: 'https://vlex.hk/vid/lee-sow-keng-janet-862518920',
+    importance: 'Core',
+  },
+  {
+    id: 'centaline-v-cyberspeed',
+    title: 'Centaline Property Agency Ltd v Cyberspeed Technology Co Ltd',
+    type: 'Corporate veil and agency',
+    citation: '[2007] 4 HKLRD 745',
+    year: '2007',
+    summary:
+      'District Court decision useful for analysing attempts to look through common ownership, nominee arguments, undisclosed principal reasoning, and property-holding companies.',
+    topics: ['corporate-personality', 'shareholder-governance'],
+    sourceUrl: 'https://vlex.hk/vid/centaline-property-agency-ltd-862802199',
+    importance: 'Specialist',
+  },
+  {
+    id: 'winland-v-wex-pharmaceuticals',
+    title: 'Winland Enterprises Group Inc v Wex Pharmaceuticals Inc and Another',
+    type: 'Corporate veil and jurisdiction',
+    citation: '[2012] 2 HKLRD 757',
+    year: '2012',
+    summary:
+      'Court of Appeal decision relevant to pleading corporate-group liability, service out of jurisdiction, and the limits of treating related companies as a single economic unit.',
+    topics: ['corporate-personality', 'directors-duties'],
+    sourceUrl: 'https://vlex.hk/vid/winland-enterprises-group-inc-862812473',
+    importance: 'Core',
+  },
   {
     id: 'waddington-v-chan',
     title: 'Waddington Ltd v Chan Chun Hoo Thomas',
@@ -558,6 +635,42 @@ export const academicWorks: ContentRecord[] = [
     topics: ['incorporation', 'directors-duties', 'minority-remedies', 'takeovers-schemes'],
     sourceUrl: 'https://store.thomsonreuters.com.hk/en-HK/product/law-of-companies-in-hong-kong-4th-edition-bundle-isbn-9789888591329/',
     importance: 'Foundational',
+  },
+  {
+    id: 'cheng-lifting-corporate-veil-hk',
+    title: 'The Lifting of Corporate Veil Doctrine in Hong Kong',
+    type: 'Journal article',
+    citation: 'Thomas K Cheng, Common Law World Review 40(3)',
+    year: '2011',
+    summary:
+      'Empirical and comparative study of Hong Kong veil-piercing cases, especially useful for mapping local doctrine against English and Commonwealth authorities.',
+    topics: ['corporate-personality', 'winding-up-restructuring', 'minority-remedies'],
+    sourceUrl: 'https://journals.sagepub.com/doi/10.1350/clwr.2011.40.3.0219',
+    importance: 'Foundational',
+  },
+  {
+    id: 'lo-corporate-veil-evasion-principle',
+    title: 'The Nature of Corporate Veil-Piercing and Revitalization of the Evasion Principle',
+    type: 'Journal article',
+    citation: 'Stefan H C Lo, Law Quarterly Review',
+    year: '2023',
+    summary:
+      'Doctrinal analysis of veil-piercing after Prest, including the evasion principle and the relationship between concealment, remedies, and ordinary legal doctrines.',
+    topics: ['corporate-personality', 'directors-duties'],
+    sourceUrl: 'https://researchblog.law.hku.hk/2023/10/stefan-lo-on-nature-of-corporate-veil.html',
+    importance: 'Specialist',
+  },
+  {
+    id: 'yiu-piercing-corporate-veil-post-prest',
+    title: 'Piercing the Corporate Veil Post-Prest: Judicial Myth or Reality?',
+    type: 'Journal article',
+    citation: 'Pui Ting Florence Yiu, Law and Financial Markets Review',
+    year: '2024',
+    summary:
+      'Recent scholarly treatment of veil-piercing after Prest, useful for testing whether the evasion principle remains operational in commercial litigation.',
+    topics: ['corporate-personality', 'directors-duties'],
+    sourceUrl: 'https://www.tandfonline.com/doi/full/10.1080/17521440.2024.2410501',
+    importance: 'Current',
   },
   {
     id: 'butterworths-company-law-handbook',
@@ -756,6 +869,42 @@ export const practiceNotes: ContentRecord[] = [
     topics: ['incorporation', 'capital-shares', 'directors-duties', 'shareholder-governance'],
     sourceUrl: 'https://www.cr.gov.hk/en/companies_ordinance/docs/NewCO_C622_HL_FullVersion-e.pdf',
     importance: 'Core',
+  },
+  {
+    id: 'doj-civil-update-piercing-corporate-veil',
+    title: 'Piercing the Corporate Veil after Prest v Petrodel',
+    type: 'Official legal update',
+    citation: 'Department of Justice, Civil Division Update, Winter 2013',
+    year: '2013',
+    summary:
+      'Government legal update explaining the UK Supreme Court approach in Prest and its relevance for Hong Kong lawyers analysing concealment, evasion, and property-control arguments.',
+    topics: ['corporate-personality', 'directors-duties'],
+    sourceUrl: 'https://www.doj.gov.hk/en/publications/pdf/cu_review_winter2013e.pdf',
+    importance: 'Core',
+  },
+  {
+    id: 'hk-lawyer-cwg-v-mh-prest',
+    title: 'A Look at CWG v MH in the Context of Prest v Petrodel',
+    type: 'Practitioner commentary',
+    citation: 'Hong Kong Lawyer',
+    year: '2016',
+    summary:
+      'Practitioner analysis of Hong Kong Court of Appeal treatment of veil-piercing in a post-Prest setting, useful for understanding how corporate-control arguments travel beyond ordinary commercial claims.',
+    topics: ['corporate-personality', 'shareholder-governance'],
+    sourceUrl: 'https://www.hk-lawyer.org/content/look-recent-court-appeal-case-cwg-v-mh-context-prest-v-petrodel',
+    importance: 'Specialist',
+  },
+  {
+    id: 'legalmondo-piercing-veil-hk',
+    title: 'Piercing the Corporate Veil in Hong Kong',
+    type: 'Practitioner note',
+    citation: 'Legalmondo',
+    year: '2026',
+    summary:
+      'Current practice note on when Hong Kong courts may disregard separate personality, with practical emphasis on evasion, sham structures, and creditor-risk scenarios.',
+    topics: ['corporate-personality', 'winding-up-restructuring'],
+    sourceUrl: 'https://www.legalmondo.com/product/piercing-the-corporate-veil-hong-kong/',
+    importance: 'Current',
   },
   {
     id: 'hkcgi-company-law-guidance',

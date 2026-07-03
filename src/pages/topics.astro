@@ -20,7 +20,8 @@ import { getTopicRecords, topics } from '@/lib/content';
 
   <section class="content-wrap topic-index">
     {topics.map((topic) => {
-      const records = getTopicRecords(topic.id).slice(0, 4);
+      const previewLimit = topic.id === 'corporate-personality' ? 8 : 4;
+      const records = getTopicRecords(topic.id).slice(0, previewLimit);
       return (
         <article class="topic-panel" id={topic.id}>
           <div class="topic-panel__body">
